@@ -1,0 +1,109 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  background-color: #C2B2B4;
+  /*height: 100%;*/
+}
+
+.page-top {
+  background-color: #3E2A35;
+  color: #FFF;
+}
+
+header {
+  border: 2px solid red;
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  flex: 1;
+}
+
+h1 > img {
+  height: 25px;
+}
+
+.search-bar {
+  flex: 1;
+}
+
+.fa-search {
+  color: #FFF;
+  background-color: hotpink;
+}
+
+.foto-form {
+  border: 2px solid blue;
+}
+
+form {
+  width: 60%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+label,
+input {
+  padding: 10px;
+  margin: 10px;
+}
+
+label {
+  color: #938284;
+}
+
+.form-buttons {
+  background-color: #5B4447;
+  color: #FFF;
+  border: 0;
+}
+
+#choose-file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.foto-library {
+  border: 2px solid yellow;
+  flex: 4;
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.foto-card {
+  border: 2px solid #938284;
+  height: 300px;
+  width: 250px;
+  background-color: #FFF;
+  color: #3E2A35;
+  display: flex;
+  flex-direction: column;
+}
+
+.foto-title {
+  flex: 1;
+}
+
+.foto-image {
+  flex: 3;
+  object-fit: scale-down;
+}
+
+.foto-caption {
+  flex: 2
+}
+
+.foto-icons {
+  background-color: #5B4447;
+  flex: 1;
+}

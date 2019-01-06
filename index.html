@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foto Finder</title>
+  <meta name="viewport" content= "width= device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header class="page-top">
+    <section class="title">
+      <h1>FOTO<img src="images/foto-finder-logo.svg">FINDER</h1>
+    </section>
+    <section class="search-bar">
+      <section class="search-container">
+        <input type="text" value="Search" id="search-input"><button><i class="fas fa-search"></i></button>
+      </section>
+    </section>
+  </header>
+  <section class="page-top foto-form">
+    <form>
+      <label>Title</label>
+      <input type="text" name="title" class="input-title">
+      <label>Caption</label>
+      <input type="text" name="caption" class="input-caption">
+      <input type="file" name="choose-file" accept="image/*" id="choose-file" class="form-buttons">
+      <label for="choose-file">Choose File</label>
+      <input type="button" name="view-favorites" value="View Favorites" class="form-buttons">
+      <input type="button" name="add-to-album" value="Add to Album" id="add-to-album" class="form-buttons">
+    </form>
+  </section>
+  <section class="foto-library">
+  </section>
+  <script src="photo.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
