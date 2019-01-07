@@ -21,12 +21,12 @@
   </header>
   <section class="page-top foto-form">
     <form>
-      <label>Title</label>
-      <input type="text" name="title" class="input-title">
-      <label>Caption</label>
-      <input type="text" name="caption" class="input-caption">
+      <label for="title">Title</label>
+      <input type="text" name="title" class="input-fields input-title" id="title">
+      <label for="caption">Caption</label>
+      <input type="text" name="caption" class="input-fields input-caption" id="caption">
       <input type="file" name="choose-file" accept="image/*" id="choose-file" class="form-buttons">
-      <label for="choose-file">Choose File</label>
+      <label for="choose-file" class="form-buttons choose-file-label">Choose File</label>
       <input type="button" name="view-favorites" value="View Favorites" class="form-buttons">
       <input type="button" name="add-to-album" value="Add to Album" id="add-to-album" class="form-buttons">
     </form>

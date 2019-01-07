@@ -11,7 +11,8 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #C2B2B4;
-  /*height: 100%;*/
+  /*background-image: url("images/back-placeholder.png");
+  background-size: 90%;*/
 }
 
 .page-top {
@@ -63,47 +64,80 @@ label {
   color: #938284;
 }
 
+.choose-file-label {
+  text-align: center;
+}
+
 .form-buttons {
   background-color: #5B4447;
   color: #FFF;
   border: 0;
 }
 
-#choose-file::-webkit-file-upload-button {
-  visibility: hidden;
+#choose-file {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }
 
 .foto-library {
   border: 2px solid yellow;
   flex: 4;
-  display: grid;
-  grid-template-columns: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100%;
+  margin-top: 80px;
+  margin: 80px 50px;
 }
 
 .foto-card {
   border: 2px solid #938284;
-  height: 300px;
+  height: 335px;
   width: 250px;
   background-color: #FFF;
   color: #3E2A35;
   display: flex;
   flex-direction: column;
+  margin: 20px;
+  padding: 0;
 }
 
 .foto-title {
-  flex: 1;
+  height: 40px;
+  width: 100%;
 }
 
-.foto-image {
-  flex: 3;
-  object-fit: scale-down;
+.foto-card img {
+  height: 150px;
+  width: 100%;
 }
 
 .foto-caption {
-  flex: 2
+  height: 85px;
+  width: 100%;
 }
 
 .foto-icons {
   background-color: #5B4447;
-  flex: 1;
+  height: 60px;
+  width: 100%;
+}
+
+.foto-icons input {
+  height: 57px;
+  margin: 0;
+  margin-top: 2px;
+  padding: 10px;
+}
+
+#favorite-btn {
+  float: right;
+}
+
+.input-fields:focus {
+  outline: none;
 }
