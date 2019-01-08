@@ -11,8 +11,9 @@ class Photo {
     localStorage.setItem('photos', JSON.stringify(imagesArr));
   }
 
-  deleteFromStorage() {
-
+  deleteFromStorage(index) {
+    imagesArr.splice(index, 1);
+    this.saveToStorage(imagesArr);
   }
 
   updatePhoto() {
