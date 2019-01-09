@@ -11,12 +11,12 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #C2B2B4;
-  /*background-image: url("images/back-placeholder.png");
-  background-size: 90%;*/
+  background-image: url("images/back-placeholder.png");
+  background-size: 90%;
 }
 
 .page-top {
-  background-color: #3E2A35;
+  /*background-color: #3E2A35;*/
   color: #FFF;
 }
 
