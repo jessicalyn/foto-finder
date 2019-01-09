@@ -11,14 +11,12 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #C2B2B4;
+  min-width: 500px;
 }
 
 .page-top {
   background-color: #3E2A35;
   color: #FFF;
-}
-
-header {
   display: flex;
   flex-direction: row;
 }
@@ -79,7 +77,7 @@ form {
   margin: 10px auto;
   display: flex;
   flex-direction: column;
-  min-width: 500px;
+  min-width: 470px;
 }
 
 label {
@@ -198,4 +196,35 @@ label {
 .form-buttons:focus,
 .search-input-field:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .page-top {
+    flex-direction: column;
+    min-width: 500px;
+    align-items: center;
+  }
+
+  .search-container {
+  position: initial;
+  right: 30px;
+  margin-top: 25px;
+}
+  h1 {
+    margin-bottom: 0;
+  }
+
+  .search-input-field {
+    width: 400px;
+}
+
+@media only screen and (max-width: 730px) {
+  .foto-library {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  }
 }
