@@ -15,20 +15,22 @@
     </section>
     <section class="search-bar">
       <section class="search-container">
-        <input type="text" value="Search" id="search-input"><button><i class="fas fa-search"></i></button>
+        <input type="text" value="Search" class="search-input-field" id="search-input"><button class="search-button"><i class="fas fa-search"></i></button>
       </section>
     </section>
   </header>
   <section class="page-top foto-form">
     <form>
       <label for="title">Title</label>
-      <input type="text" name="title" class="input-fields input-title" id="title">
+      <input type="text" name="title" class="input-fields input-title" id="title" maxlength=”17”>
       <label for="caption">Caption</label>
-      <input type="text" name="caption" class="input-fields input-caption" id="caption">
+      <input type="text" name="caption" class="input-fields input-caption" id="caption" maxlength=”38”>
       <label for="choose-file" class="form-buttons choose-file-label">Choose File</label>
       <input type="file" name="choose-file" accept="image/*" id="choose-file" class="form-buttons">
-      <input type="button" name="view-favorites" value="View Favorites" class="form-buttons">
-      <input type="button" name="add-to-album" value="Add to Album" id="add-to-album" class="form-buttons">
+      <div class="small-buttons-container">
+        <input type="button" name="view-favorites" value="View Favorites" class="form-buttons small-form-buttons">
+        <input type="button" name="add-to-album" value="Add to Album" id="add-to-album" class="form-buttons small-form-buttons">
+      </div>
     </form>
   </section>
   <section class="foto-library">

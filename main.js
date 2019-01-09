@@ -35,12 +35,12 @@ function displayPhotoCard(card) {
   photoGallery.innerHTML += 
   `<article class="foto-card" data-id="${card.id}">
       <section>
-        <h2 class="foto-title h2-edit" contenteditable="true">${card.title}</h2>
+        <h2 class="foto-title foto-card-fonts" contenteditable="true">${card.title}</h2>
       </section>
       <section class="foto-image">
         <img src=${card.file} />
       </section>
-      <section class="foto-caption caption-edit" contenteditable="true">
+      <section class="foto-caption foto-card-fonts" contenteditable="true">
         <p>${card.caption}</p>
       </section>
       <section class="foto-icons">
@@ -79,11 +79,11 @@ function captureContent(event) {
 
 function editContent(index, targetClass, targetText) {
   console.log(index, targetClass, targetText);
-  if (targetClass === "foto-title h2-edit") {
+  if (targetClass === "foto-title foto-card-fonts") {
     console.log("title if");
     imagesArr[index].updatePhoto("title", targetText);
   }
-  if (targetClass === "foto-caption caption-edit") {
+  if (targetClass === "foto-caption foto-card-fonts") {
     imagesArr[index].updatePhoto("caption", targetText);
   }
 }
