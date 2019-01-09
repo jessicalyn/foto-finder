@@ -11,6 +11,7 @@ var library = document.querySelector('.foto-library');
 window.addEventListener('load', appendPhotos(imagesArr));
 addToAlbum.addEventListener('click', createElement);
 library.addEventListener('click', manipulateCard);
+library.addEventListener('keydown', pressEnter);
 
 function addPhoto(e) {
   var newPhoto = new Photo(Date.now(), title.value, e.target.result, caption.value);
@@ -32,12 +33,12 @@ function displayPhotoCard(card) {
   photoGallery.innerHTML += 
   `<article class="foto-card" data-id="${card.id}">
       <section>
-        <h2 class="input-fields foto-title h2-edit" contenteditable="true">${card.title}</h2>
+        <h2 class="foto-title h2-edit" contenteditable="true">${card.title}</h2>
       </section>
       <section class="foto-image">
         <img src=${card.file} />
       </section>
-      <section class="input-fields foto-caption caption-edit" contenteditable="true">
+      <section class="foto-caption caption-edit" contenteditable="true">
         <p>${card.caption}</p>
       </section>
       <section class="foto-icons">
@@ -54,6 +55,35 @@ function appendPhotos(array) {
     imagesArr.push(photoCard);
     displayPhotoCard(photoCard);
   })
+}
+
+function pressEnter(event) {
+  if(event.keyCode === 13) {
+    captureContent(event);
+  }
+}
+
+function captureContent(event) {
+  event.preventDefault();
+  var selectedCard = event.target.closest("article");
+  var selectedCardId = parseInt(selectedCard.dataset.id);
+  var index = imagesArr.findIndex(function(photo) {
+    return photo.id === selectedCardId;
+  });
+  var targetClass = event.target.className;
+  var targetText = event.target.innerText;
+  changeContent(index, targetClass, targetText);
+}
+
+function changeContent(index, targetClass, targetText) {
+  console.log(index, targetClass, targetText);
+  if (targetClass === "foto-title h2-edit") {
+    console.log("title if");
+    imagesArr[index].updatePhoto("title", targetText);
+  }
+  if (targetClass === "foto-caption caption-edit") {
+    imagesArr[index].updatePhoto("caption", targetText);
+  }
 }
 
 function manipulateCard(event) {

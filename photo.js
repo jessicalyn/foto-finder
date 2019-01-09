@@ -19,10 +19,18 @@ class Photo {
     this.saveToStorage(imagesArr);
   }
 
-  updatePhoto() {
+  updatePhoto(category, text) {
+    console.log(category, text);
     if (event.target.classList.contains("favorite-btn")) {
       this.favorite = !this.favorite;
-    this.saveToStorage(imagesArr);
+      this.saveToStorage(imagesArr);
     }
+    if (category === "title") {
+      this.title = text;
+    }
+    if (category === "caption") {
+      this.caption = text;
+    }
+    this.saveToStorage(imagesArr);
   }
 }
