@@ -87,7 +87,6 @@ label {
   border: 2px solid yellow;
   flex: 4;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   height: 100%;
   margin-top: 80px;

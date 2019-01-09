@@ -42,7 +42,7 @@ function displayPhotoCard(card) {
       </section>
       <section class="foto-icons">
         <input class="card-btns delete-btn" type="image" src="images/delete.svg">
-        <input class="card-btns favorite-btn" type="image" src="images/favorite.svg">
+        <input class="card-btns favorite-btn" type="image" src=${card.favorite ? "images/favorite-active.svg" : "images/favorite.svg"}>
       </section>
     </article>`
 }
@@ -58,7 +58,7 @@ function appendPhotos(array) {
 
 function manipulateCard(event) {
   if (event.target.classList.contains("delete-btn")){
-    deleteCard();
+    deleteCard(event);
   } else if (event.target.classList.contains("favorite-btn")){
     isFavorite(event);
   } else if (event.target.classList.contains("h2-edit" || "caption-edit")){
@@ -66,18 +66,30 @@ function manipulateCard(event) {
   }
 }
 
-function deleteCard() {
+function deleteCard(event) {
   var selectedCard = event.target.closest('article');
-  var selectedId = parseInt(selectedCard.dataset.id);
+  var selectedCardId = parseInt(selectedCard.dataset.id);
   var index = imagesArr.findIndex(function(photo) {
-    return photo.id === selectedId;
-  });
+      return photo.id === selectedCardId;
+    });  
   imagesArr[index].deleteFromStorage();
   selectedCard.remove();
 }
   
 function isFavorite(event) {
-  console.log("clicked favorite")
+  console.log("clicked favorite");
+  var selectedCard = event.target.closest('article');
+  var selectedCardId = parseInt(selectedCard.dataset.id);
+  var foundCard = imagesArr.find(function(photo) {
+      return photo.id === selectedCardId;
+    });  
+  if(foundCard.favorite === true) {
+    event.target.src = "images/favorite.svg";
+  } else {
+    event.target.src = "images/favorite-active.svg";
+  }
+  foundCard.updatePhoto();
+  foundCard.saveToStorage(imagesArr);
 }
 
 function editContent(event) {
